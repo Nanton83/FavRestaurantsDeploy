@@ -12,3 +12,10 @@ Restaurant.create([
     {name: 'Stumble Inn', city: 'New York', state: 'New York'},
     {name: 'Pita Pocket', city: 'Van Nuys', state: 'California'}
 ])
+
+Dish.create([
+    {name: 'Cali Pastrami', restaurant_id: 1},
+    {name: 'Beef Tendon Soup', restaurant_id: 2},
+    {name: 'Stuffed Bacon Burger', restaurant_id: 3},
+    {name: 'Lamb Shawarma Laffa', restaurant_id: 4}
+])

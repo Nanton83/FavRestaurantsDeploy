@@ -1,7 +1,7 @@
-class DishesController < ApplicationController
+class Api::V1::DishesController < ApplicationController
 
     def index
-        @dishes = dish.all
+        @dishes = Dish.all
         render json: @dishes
     end 
 
@@ -12,6 +12,7 @@ class DishesController < ApplicationController
 
     def create
         @dish = Dish.create(dish_params)
+        # set restaurant_id here
         render json: @dish
     end
 
@@ -30,7 +31,7 @@ class DishesController < ApplicationController
     private
 
     def dish_params
-        params.require(:dish).permit(:name)
+        params.require(:dish).permit(:name, :restaurant_id)
     end
 
 end

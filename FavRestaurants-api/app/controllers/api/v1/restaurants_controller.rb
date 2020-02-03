@@ -1,3 +1,4 @@
+
 class Api::V1::RestaurantsController < ApplicationController
 
     def index
@@ -5,13 +6,20 @@ class Api::V1::RestaurantsController < ApplicationController
         render json: @restaurants
     end 
 
+    def new
+        @restaurant = Restaurant.new
+    end
+
     def show
         @restaurant = Restaurant.find_by(id: params[:id])
-        render json: @restaurant
+        render json: @restaurant, include: ['dishes']
     end
 
     def create
-        @restaurant = Restaurant.create(restaurant_params)
+        binding.pry
+        @restaurant = Restaurant.new(restaurant_params)
+        binding.pry
+        @restaurant.save
         render json: @restaurant
     end
 

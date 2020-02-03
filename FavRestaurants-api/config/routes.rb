@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :restaurants
       resources :dishes
+      
+      
     end
   end
 end

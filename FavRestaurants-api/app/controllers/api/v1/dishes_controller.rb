@@ -12,7 +12,7 @@ class Api::V1::DishesController < ApplicationController
 
     def create
         @dish = Dish.create(dish_params)
-        # set restaurant_id here
+        @dish.restaurant_id = dish_params.id
         render json: @dish
     end
 

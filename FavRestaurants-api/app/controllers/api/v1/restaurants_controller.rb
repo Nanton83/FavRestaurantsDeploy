@@ -3,7 +3,7 @@ class Api::V1::RestaurantsController < ApplicationController
 
     def index
         @restaurants = Restaurant.all
-        binding.pry
+       
         render json: @restaurants
     end 
 
@@ -15,7 +15,7 @@ class Api::V1::RestaurantsController < ApplicationController
     def create
         
         @restaurant = Restaurant.create(restaurant_params)
-        binding.pry
+        
         render json: @restaurant
     end
 

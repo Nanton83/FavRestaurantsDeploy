@@ -3,12 +3,9 @@ class Api::V1::RestaurantsController < ApplicationController
 
     def index
         @restaurants = Restaurant.all
+        binding.pry
         render json: @restaurants
     end 
-
-    def new
-        @restaurant = Restaurant.new
-    end
 
     def show
         @restaurant = Restaurant.find_by(id: params[:id])
@@ -16,10 +13,9 @@ class Api::V1::RestaurantsController < ApplicationController
     end
 
     def create
+        
+        @restaurant = Restaurant.create(restaurant_params)
         binding.pry
-        @restaurant = Restaurant.new(restaurant_params)
-        binding.pry
-        @restaurant.save
         render json: @restaurant
     end
 
@@ -38,7 +34,7 @@ class Api::V1::RestaurantsController < ApplicationController
     private
 
     def restaurant_params
-        params.require(:restaurant).permit(:name, :city, :state)
+        params.require(:restaurant).permit(:name, :city, :state, dishes_attributes: [:id, :name])
     end
 
 end

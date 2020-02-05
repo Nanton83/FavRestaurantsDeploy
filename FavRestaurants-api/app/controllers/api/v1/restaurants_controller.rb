@@ -2,9 +2,12 @@
 class Api::V1::RestaurantsController < ApplicationController
 
     def index
+    
         @restaurants = Restaurant.all
        
-        render json: @restaurants
+        render json: @restaurants.to_json(:include => {
+            :dishes => {:only => [:id, :name, :restaurant_id]}
+        })
     end 
 
     def show

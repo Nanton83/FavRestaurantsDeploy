@@ -21,7 +21,10 @@ class Restaurants{
         const cityValue = this.newRestaurantCity.value
         const stateValue = this.newRestaurantState.value
         
-        this.adapter.createRestaurant(nameValue, cityValue, stateValue)
+        this.adapter.createRestaurant(nameValue, cityValue, stateValue).then(restaurant => {
+            this.restaurants.push(new Restaurant(restaurant))
+            this.render()
+        })
     }
 
     fetchAndLoadRestaurants(){

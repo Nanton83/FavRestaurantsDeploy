@@ -21,7 +21,7 @@ class RestaurantsAdapter{
                 'content-type': 'application/json',
             },
             body: JSON.stringify({restaurant}),
-        })
+        }).then(results => results.json())
     }
 
 }

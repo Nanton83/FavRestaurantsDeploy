@@ -9,7 +9,7 @@ class Restaurants{
         this.adapter
         .getRestaurants()
         .then(restaurants => {
-            restaurants.forEach(restaurant => this.restaurants.push(restaurant))
+            restaurants.forEach(restaurant => this.restaurants.push(new Restaurant(restaurant)))
         })
         .then(() => {
             this.render()
@@ -17,9 +17,7 @@ class Restaurants{
     }
 
     render(){
-        console.log('rendering...')
         const restaurantsContainer = document.getElementById('restaurants-container')
-        restaurantsContainer.innerHTML = 'my restaurants here'
-        console.log('Your Favorite Restaurants Are:', this.restaurants)
+        restaurantsContainer.innerHTML = this.restaurants.map(restaurant => `<li>${restaurant.name}</li>`).join('')
     }
 }

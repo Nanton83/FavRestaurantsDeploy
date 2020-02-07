@@ -12,7 +12,7 @@ class Api::V1::RestaurantsController < ApplicationController
 
     def show
         @restaurant = Restaurant.find_by(id: params[:id])
-        render json: @restaurant, include: ['dishes']
+        render json: @restaurant
     end
 
     def create

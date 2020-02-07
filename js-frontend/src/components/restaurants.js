@@ -17,9 +17,10 @@ class Restaurants{
 
     createRestaurant(event){
         event.preventDefault()
-        const nameValue = this.newRestaurantName.nameValue
-        const cityValue = this.newRestaurantName.cityValue
-        const stateValue = this.newRestaurantName.stateValue
+        const nameValue = this.newRestaurantName.value
+        const cityValue = this.newRestaurantCity.value
+        const stateValue = this.newRestaurantState.value
+        
         this.adapter.createRestaurant(nameValue, cityValue, stateValue)
     }
 

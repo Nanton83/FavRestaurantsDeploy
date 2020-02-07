@@ -8,4 +8,20 @@ class RestaurantsAdapter{
         return fetch(this.baseUrl).then(results => results.json()
         )
     }
+
+    createRestaurant(nameValue, cityValue, stateValue){
+        const restaurant = {
+            name: nameValue,
+            city: cityValue,
+            state: stateValue
+        }
+        return fetch(this.baseUrl,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({restaurant}),
+        })
+    }
+
 }

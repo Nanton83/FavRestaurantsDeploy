@@ -16,7 +16,7 @@ class Api::V1::RestaurantsController < ApplicationController
     end
 
     def create
-        
+        # binding.pry
         @restaurant = Restaurant.create(restaurant_params)
         
         render json: @restaurant

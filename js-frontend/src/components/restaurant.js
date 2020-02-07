@@ -5,4 +5,9 @@ class Restaurant{
         this.city = restaurantJSON.city
         this.state = restaurantJSON.state
     }
+
+    renderLi(){
+        return `<li>${this.name} - ${this.city}, ${this.state}</li>`
+    }
+
 }

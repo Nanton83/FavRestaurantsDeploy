@@ -2,7 +2,12 @@ class Restaurants{
     constructor() {
         this.restaurants = []
         this.adapter = new RestaurantsAdapter()
+        this.initBindingsAndEventListeners()
         this.fetchAndLoadRestaurants()
+    }
+
+    initBindingsAndEventListeners(){
+        this.restaurantsContainer = document.getElementById('restaurants-container')
     }
 
     fetchAndLoadRestaurants(){
@@ -17,7 +22,6 @@ class Restaurants{
     }
 
     render(){
-        const restaurantsContainer = document.getElementById('restaurants-container')
-        restaurantsContainer.innerHTML = this.restaurants.map(restaurant => `<li>${restaurant.name}</li>`).join('')
+        this.restaurantsContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderLi()).join('')
     }
 }

@@ -1,6 +1,7 @@
 class Restaurants{
     constructor() {
         this.restaurants = []
+    
         this.adapter = new RestaurantsAdapter()
         this.initBindingsAndEventListeners()
         this.fetchAndLoadRestaurants()
@@ -24,6 +25,7 @@ class Restaurants{
         
         this.adapter.createRestaurant(nameValue, cityValue, stateValue).then(restaurant => {
             this.restaurants.push(new Restaurant(restaurant))
+            
             this.render()
         })
     }
@@ -37,14 +39,22 @@ class Restaurants{
         })
         // this.restaurants[0].dishes[0].name
         .then(() => {
+            
             this.render()
+        })
+        .then(() => {
+             const dishOnly = this.restaurants.map(restaurant => restaurant.dishes.map(dish => dish.name))
+            debugger
         })
     }
 
     render(){
 
         this.restaurantsContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderLi()).join('')
-        this.dishesContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderDishLi()).join('')
+      
         
+        // this.dishesContainer.innerHTML = this.restaurants.map(restaurant => restaurant.dishes.map(dish => dish.name.renderDishLi())).join('')
+        
+
     }
 }

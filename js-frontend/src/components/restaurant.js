@@ -4,8 +4,9 @@ class Restaurant{
         this.name = restaurantJSON.name
         this.city = restaurantJSON.city
         this.state = restaurantJSON.state
-        this.dish = restaurantJSON.dishes[0].name
-        // debugger
+        this.dishes = restaurantJSON.dishes
+        
+        
     }
 
     renderLi(){
@@ -13,8 +14,8 @@ class Restaurant{
     }
 
     renderDishLi(){
-        // debugger
-        return `<li>${this.dish}`
+        return `<li>${this.dish}</li>`
+        
     }
 
 }

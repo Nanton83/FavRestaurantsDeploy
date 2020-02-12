@@ -44,6 +44,7 @@ class Restaurants{
         })
         .then(() => {
              const dishOnly = this.restaurants.map(restaurant => restaurant.dishes.map(dish => dish.name))
+             dishOnly.forEach(dish => dish.renderDishLi())
             debugger
         })
     }

@@ -10,6 +10,7 @@ class Restaurant{
     }
 
     renderLi(){
+        
         return `<li>${this.name} - ${this.city}, ${this.state}</li>`
     }
 

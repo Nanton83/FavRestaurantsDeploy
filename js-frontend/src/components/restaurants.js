@@ -43,7 +43,9 @@ class Restaurants{
             
             this.render()
         })
+        
     }
+    
     
     render(){
 

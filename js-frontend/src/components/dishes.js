@@ -15,7 +15,7 @@ class Dishes{
         .getDishes()
         .then(dishes => {
             dishes.forEach(dish => this.dishes.push(new Dish(dish)))
-                    debugger
+                    
             })
             .then(() => {
                 this.render()

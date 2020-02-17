@@ -5,7 +5,8 @@ class Dish{
     }
 
     renderDishLi(){
-        return `<li>${this.dish}</li>`
+        
+        return `<li>${this.name}</li>`
         
     }
 

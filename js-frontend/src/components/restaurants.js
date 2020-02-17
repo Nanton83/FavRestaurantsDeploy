@@ -9,7 +9,7 @@ class Restaurants{
 
     initBindingsAndEventListeners(){
         this.restaurantsContainer = document.getElementById('restaurants-container')
-        this.dishesContainer = document.getElementById('dishes-container')
+        
         this.newRestaurantName = document.getElementById('new-restaurant-name')
         this.newRestaurantCity = document.getElementById('new-restaurant-city')
         this.newRestaurantState = document.getElementById('new-restaurant-state')
@@ -34,6 +34,7 @@ class Restaurants{
         this.adapter
         .getRestaurants()
         .then(restaurants => {
+            
             restaurants.forEach(restaurant => this.restaurants.push(new Restaurant(restaurant)))
             // debugger
         })
@@ -42,13 +43,8 @@ class Restaurants{
             
             this.render()
         })
-        .then(() => {
-             const dishOnly = this.restaurants.map(restaurant => restaurant.dishes.map(dish => dish.name))
-             dishOnly.forEach(dish => dish.renderDishLi())
-            debugger
-        })
     }
-
+    
     render(){
 
         this.restaurantsContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderLi()).join('')

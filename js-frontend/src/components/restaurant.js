@@ -13,9 +13,4 @@ class Restaurant{
         return `<li>${this.name} - ${this.city}, ${this.state}</li>`
     }
 
-    renderDishLi(){
-        return `<li>${this.dish}</li>`
-        
-    }
-
 }

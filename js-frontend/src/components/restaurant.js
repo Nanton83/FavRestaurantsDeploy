@@ -11,7 +11,7 @@ class Restaurant{
 
     renderLi(){
         
-        return `<li>${this.name} - ${this.city}, ${this.state}</li>`
+        return `<li>${this.name} - ${this.city}, ${this.state}, ${this.dishes[0].name}</li>` //this.dishes[0].name is temporary to show the data exists
     }
 
 }

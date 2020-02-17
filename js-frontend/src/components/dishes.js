@@ -23,7 +23,7 @@ class Dishes{
     }
 
     render(){
-
+        
         this.dishesContainer.innerHTML = this.dishes.map(dish => dish.renderDishLi()).join('')
         
 

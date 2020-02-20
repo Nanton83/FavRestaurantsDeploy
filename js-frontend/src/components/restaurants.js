@@ -38,22 +38,18 @@ class Restaurants{
             restaurants.forEach(restaurant => this.restaurants.push(new Restaurant(restaurant)))
             // debugger
         })
-        // this.restaurants[0].dishes[0].name
         .then(() => {
             
             this.render()
         })
-        
+
     }
     
     
     render(){
 
         this.restaurantsContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderLi()).join('')
-      
-        
-        // this.dishesContainer.innerHTML = this.restaurants.map(restaurant => restaurant.dishes.map(dish => dish.name.renderDishLi())).join('')
-        
-
     }
+
+  
 }

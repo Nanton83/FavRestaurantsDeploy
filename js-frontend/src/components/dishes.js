@@ -1,13 +1,15 @@
 class Dishes{
     constructor() {
         this.dishes = []
+        
         this.adapter = new DishesAdapter()
         this.initBindingsAndEventListeners()
         this.fetchAndLoadDishes()
+        this.createDishNode()
     }
 
     initBindingsAndEventListeners(){
-        this.dishesContainer = document.getElementById('dishes-container')
+        this.restaurantsContainer = document.getElementById('restaurants-container')
     }
 
     fetchAndLoadDishes(){
@@ -20,13 +22,25 @@ class Dishes{
             .then(() => {
                 this.render()
         })
+        .then(() => {
+            this.createDishNode()
+        })
+    }
+    
+    
+
+    createDishNode(){
+        
+        let node = document.createElement("li")
+        let dishnode = document.createTextNode('Dish')
+        node.appendChild(dishnode)
+        document.getElementById('dishes-container').appendChild(node)
     }
 
     render(){
-        
-        this.dishesContainer.innerHTML = this.dishes.map(dish => dish.renderDishLi()).join('')
-        
-
+    
+        this.restaurantsContainer.innerHTML = this.dishes.map(dish => dish.renderDishLi()).join('')
+    
     }
 
 }

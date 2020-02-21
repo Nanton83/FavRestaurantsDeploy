@@ -30,8 +30,9 @@ class Restaurant{
           <ul>
             ${this.dishes.map(dish => {
               return (`<li>${dish.name}</li>`)
-            }).join('')} <button onclick="dishCreate()">Create New Dish</button>
+            }).join('')} 
           </ul>
+          <button onclick="dishCreate()">Create New Dish</button>
           `
         )
     }

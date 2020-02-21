@@ -16,12 +16,24 @@ class Restaurant{
 //    }
 
 
-    renderLi(){
+    // renderLi(){
         
-        // let dishes = renderDishes(this)
+    //     // let dishes = renderDishes(this)
         
-        return `<li>${this.name} - ${this.city}, ${this.state} </li> <button onclick="dishCreate()">Create New Dish</button> ` 
+    //     return `<li>${this.name} - ${this.city}, ${this.state} </li> <button onclick="dishCreate()">Create New Dish</button> ` 
         
+    // }
+
+    renderRestaurantHtml() {
+        return (
+          `<li>${this.name} - ${this.city}, ${this.state}<br>
+          <ul>
+            ${this.dishes.map(dish => {
+              return (`<li>${dish.name}</li>`)
+            }).join('')} <button onclick="dishCreate()">Create New Dish</button>
+          </ul>
+          `
+        )
     }
 
 }

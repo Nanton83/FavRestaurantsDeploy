@@ -34,21 +34,16 @@ class Restaurants{
         this.adapter
         .getRestaurants()
         .then(restaurants => {
-            
-            restaurants.forEach(restaurant => this.restaurants.push(new Restaurant(restaurant)))
-            // debugger
+            this.renderRestaurants(restaurants)
         })
-        .then(() => {
-            
-            this.render()
-        })
-
     }
         
-    render(){
-
-        this.restaurantsContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderLi()).join('')
-    }
+    renderRestaurants(restaurantsArray) {
+        restaurantsArray.forEach(restaurant => {
+          let newRestaurant = new Restaurant(restaurant)
+          this.restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
+        })
+      }
 
   
 }

@@ -22,12 +22,23 @@
     <ul id="restaurants-container">
         
         <!-- <ul id="dishes-container"> I want to show dishes associated with restaurants-->
-
-        
-        
     </ul>
-    <ul id="dishes-container"></ul>
+    <div id="dishDIV">
+        New Dish Form
     </div>
+    </div>
+    <script>
+        function dishCreate() {
+          var x = document.getElementById("dishDIV");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script> 
+        <!-- I would like to put this function in dishes.js somehow -->
+        
 
     <script type="text/javascript" src="src/components/restaurant.js"> </script>
     <script type="text/javascript" src="src/components/restaurants.js"> </script>

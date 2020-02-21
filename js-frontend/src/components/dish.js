@@ -4,11 +4,11 @@ class Dish{
         this.restaurant_id = dishJSON.restaurant_id
     }
 
-    renderDishLi(){
+    // renderDishLi(){
         
-        return `<li>${this.name}</li>`
+    //     return `<li>${this.name}</li>`
         
-    }
+    // }
 
 
 }

@@ -44,8 +44,7 @@ class Restaurants{
         })
 
     }
-    
-    
+        
     render(){
 
         this.restaurantsContainer.innerHTML = this.restaurants.map(restaurant => restaurant.renderLi()).join('')

@@ -7,20 +7,21 @@ class Restaurant{
         this.dishes = restaurantJSON.dishes
     }
 
-    renderDishes(){
-        debugger
-         this.dishes.map(dish => {
-           console.log(dish.name)
-        })
-    }
-
-
-    
-    renderLi(){
-        // let dishes = this.renderDishes()
+//     renderDishes(object){
         
-        return `<li>${this.name} - ${this.city}, ${this.state}<br> ${this.renderDishes()}</li>` 
-        //this.dishes[0].name is temporary to show the data
+//         object.dishes.map(dish => {
+           
+//           return dish.name
+//        })
+//    }
+
+
+    renderLi(){
+        
+        // let dishes = renderDishes(this)
+        
+        return `<li>${this.name} - ${this.city}, ${this.state} </li> <button onclick="dishCreate()">Create New Dish</button> ` 
+        
     }
 
 }

@@ -25,16 +25,23 @@ class Restaurant{
     // }
 
     renderRestaurantHtml() {
+      
         return (
-          `<li>${this.name} - ${this.city}, ${this.state}<br>
+          `<li>${this.name} - ${this.city}, ${this.state}  <br>
+          <ul class="hide">${this.id}</ul>
           <ul>
             ${this.dishes.map(dish => {
+            
               return (`<li>${dish.name}</li>`)
-            }).join('')} 
+            }).join('')}
+            
           </ul>
-          <button onclick="dishCreate()">Create New Dish</button>
           `
         )
     }
 
+  
+    
+
 }
+

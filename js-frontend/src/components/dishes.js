@@ -3,25 +3,26 @@ class Dishes{
         this.dishes = []
         
         this.adapter = new DishesAdapter()
-        // this.initBindingsAndEventListeners()
+        this.initBindingsAndEventListeners()
         // this.fetchAndLoadDishes()
         // this.createDishNode()
     }
 
     initBindingsAndEventListeners(){
+        this.dishForm = document.getElementById('new-dish-form')
         this.newDishName = document.getElementById('new-dish-name')
+        this.restaurantId = document.getElementById('new-dish-restaurant-id')
+        
     }
 
     
 
     createDish(event){
         event.preventDefault()
-        const nameValue = this.newRestaurantName.value
-        const cityValue = this.newRestaurantCity.value
-        const stateValue = this.newRestaurantState.value
+        const nameValue = this.newDishName.value
         
-        this.adapter.createRestaurant(nameValue, cityValue, stateValue).then(restaurant => {
-            this.restaurants.push(new Restaurant(restaurant))
+        this.adapter.createDish(nameValue, restaurantId).then(dish => {
+            this.dishes.push(new Dish(dish))
             
             this.render()
         })

@@ -21,26 +21,21 @@
     </div>
     <ul id="restaurants-container">
         
-        <!-- <ul id="dishes-container"> I want to show dishes associated with restaurants-->
+        </div>
+        
     </ul>
-    <div id="dishDIV" style="display:none;">
-        <form id="new-dish-form">
-            <input type="text" name="dish-name" id="new-dish-name"placeholder="Dish Name"/><br>
-            <input type="submit" value="Save Dish"/>
-        </form>
+
+    <!-- <select name="restaurant-list" id="restaurant-list"></select> -->
+    <form id="new-dish-form">
+            <select name="restaurant-list" id="restaurant-list">
+                <option>Choose Restaurant</option>
+            </select>
+        <input type="text" name="dish-name" id="new-dish-name"placeholder="Create New Dish"/><br>
+        <button onclick="createDish()">Create New Dish</button>
+      </form>
+   
     </div>
-    </div>
-    <script>
-        function dishCreate() {
-          var x = document.getElementById("dishDIV");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
-        }
-        </script> 
-        <!-- I would like to put this function in dishes.js somehow -->
+
         
 
     <script type="text/javascript" src="src/components/restaurant.js"> </script>

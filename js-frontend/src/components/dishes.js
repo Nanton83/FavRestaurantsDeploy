@@ -12,7 +12,8 @@ class Dishes{
         this.dishForm = document.getElementById('new-dish-form')
         this.newDishName = document.getElementById('new-dish-name')
         this.restaurantId = document.getElementById('new-dish-restaurant-id')
-        
+        let buttons = document.querySelectorAll('.rest-button') 
+        buttons.forEach((btn) => { btn.addEventListener("click", (event) => { alert(event.target); }); });
     }
 
     
@@ -20,7 +21,7 @@ class Dishes{
     createDish(event){
         event.preventDefault()
         const nameValue = this.newDishName.value
-        
+        debugger
         this.adapter.createDish(nameValue, restaurantId).then(dish => {
             this.dishes.push(new Dish(dish))
             

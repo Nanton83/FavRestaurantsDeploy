@@ -5,7 +5,7 @@ class Restaurants{
         this.adapter = new RestaurantsAdapter()
         this.initBindingsAndEventListeners()
         this.fetchAndLoadRestaurants()
-        this.fillDropDown()
+        this.getRestaurantName()
     }
 
     initBindingsAndEventListeners(){
@@ -33,17 +33,24 @@ class Restaurants{
         })
     }
 
-
-    fillDropDown(){
-        const options = []
-        let select = document.getElementById("restaurant-list")
-        
+    getRestaurantName(){
         this.adapter
         .getRestaurants()
         .then(restaurants => {
-            restaurants.forEach(restaurant => options.push(restaurant.name))
-        })
-   
+            
+            restaurants.forEach(restaurant => {
+                
+                let rName = restaurant.name
+                
+                this.buildDropDown(rName)
+            })
+        })   
+    }
+
+    buildDropDown(name){
+        let select = document.getElementById("restaurant-list")
+        let options = []
+        options.push(name)
         for(let i = 0; i < options.length; i++) {
             let opt = options[i];
             let el = document.createElement("option");
@@ -51,8 +58,7 @@ class Restaurants{
             el.value = opt;
             select.appendChild(el);
         }
-      }
-
+    }
 
     fetchAndLoadRestaurants(){
         this.adapter
@@ -68,8 +74,6 @@ class Restaurants{
     
         restaurantsArray.forEach(restaurant => {
           let newRestaurant = new Restaurant(restaurant)
-          
-          
           this.restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
         })
     }

@@ -3,6 +3,6 @@ class App {
         
         this.restaurants = new Restaurants()
         this.dishes = new Dishes()
-        // this.dishes = new Dishes()
+        
     }
 }

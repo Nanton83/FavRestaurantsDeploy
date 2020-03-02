@@ -1,19 +1,17 @@
 class Dishes{
     constructor() {
         this.dishes = []
-        
         this.adapter = new DishesAdapter()
         this.initBindingsAndEventListeners()
-        // this.fetchAndLoadDishes()
-        // this.createDishNode()
+        
     }
 
     initBindingsAndEventListeners(){
         this.dishForm = document.getElementById('new-dish-form')
         this.newDishName = document.getElementById('new-dish-name')
         this.restaurantId = document.getElementById('new-dish-restaurant-id')
-        let buttons = document.querySelectorAll('.rest-button') 
-        buttons.forEach((btn) => { btn.addEventListener("click", (event) => { alert(event.target); }); });
+        this.selectElement = document.querySelector('restaurant-list')
+        this.restaurantBtn = document.getElementById("dishBtn").addEventListener("click", this.getDishOption)
     }
 
     
@@ -29,35 +27,12 @@ class Dishes{
         })
     }
 
-    // fetchAndLoadDishes(){
-    //     this.adapter
-    //     .getDishes()
-    //     .then(dishes => {
-    //         dishes.forEach(dish => this.dishes.push(new Dish(dish)))
-                    
-    //         })
-    //         .then(() => {
-    //             this.render()
-    //     })
-    //     // .then(() => {
-    //     //     this.createDishNode()
-    //     // })
-    // }
-    
-    
+    getDishOption() { 
+// trying to get info from selected dropdown currently displaying undefined
 
-    // createDishNode(){
+        let output = this.selectElement
         
-    //     let node = document.createElement("li")
-    //     let dishnode = document.createTextNode('Dish')
-    //     node.appendChild(dishnode)
-    //     document.getElementById('dishes-container').appendChild(node)
-    // }
-
-    // render(){
-    
-    //     // this.restaurantsContainer.innerHTML = this.dishes.map(dish => dish.renderDishLi()).join('')
-    
-    // }
+        console.log(output) 
+    } 
 
 }

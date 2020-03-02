@@ -40,22 +40,23 @@ class Restaurants{
             
             restaurants.forEach(restaurant => {
                 
-                let rName = restaurant.name
                 
-                this.buildDropDown(rName)
+                
+                this.buildDropDown(restaurant)
             })
         })   
     }
 
-    buildDropDown(name){
+    buildDropDown(restaurant){
         let select = document.getElementById("restaurant-list")
         let options = []
-        options.push(name)
+        options.push(restaurant)
         for(let i = 0; i < options.length; i++) {
             let opt = options[i];
             let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
+            el.textContent = opt.name;
+            el.value = opt.id;
+            
             select.appendChild(el);
         }
     }

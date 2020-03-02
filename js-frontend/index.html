@@ -25,12 +25,21 @@
         <div id="restaurants-container">
             
         </div>
-            <h1>Add Your Favorite Dish</h1>
-        <label for="restaurant-list">Choose A Restaurant:</label>
-        <select id="restaurant-list"><option value="" disabled selected hidden>Restaurants</option></select>
+
+        <h1>Add Your Favorite Dish</h1>
+
+        <form id="new-dish-form">
+            <label for="restaurant-list">Choose A Restaurant:</label>
+            <select id="restaurant-list"><option value="" disabled selected hidden>Restaurants</option></select>
+            <input type="text" name="dish-name" id="new-dish-name" placeholder="Favorite Dish Name"/>
+            <button id="dishBtn"> 
+                Add Dish 
+            </button>
+        </form>
         
     
     </div>
+    
 
         
     <script type="text/javascript" src="src/components/dish.js"> </script>

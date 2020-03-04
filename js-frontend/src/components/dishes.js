@@ -10,32 +10,19 @@ class Dishes{
         this.dishForm = document.getElementById('new-dish-form')
         this.newDishName = document.getElementById('new-dish-name')
         this.restaurantId = document.getElementById('new-dish-restaurant-id')
-        
-        this.restaurantBtn = document.getElementById("dishBtn").addEventListener("click", this.getDishOption)
-        
+        this.restaurantBtn = document.getElementById("dishBtn")
+        this.restaurantBtn.addEventListener("click", this.createDish.bind(this))
     }
 
-    
-
-    createDish(event){
+    createDish(event) { 
         event.preventDefault()
-        const nameValue = this.newDishName.value
-        
-        this.adapter.createDish(nameValue, restaurantId).then(dish => {
-            this.dishes.push(new Dish(dish))
-            
-            this.render()
-        })
-    }
-
-    getDishOption() { 
-
         this.optionIndex = document.getElementById("restaurant-list")
-        let restaurantId = this.optionIndex.options.selectedIndex
-        debugger
-    
+        const dishName = "Test Dish"
+        const restaurantId = this.optionIndex.options.selectedIndex
         
-        console.log(restaurantId) 
-    } 
+        this.adapter.createDish(dishName, restaurantId)
+        // .then(dish => {
+        //     this.dishes.push(new Dish(dish))
+    }
 
 }

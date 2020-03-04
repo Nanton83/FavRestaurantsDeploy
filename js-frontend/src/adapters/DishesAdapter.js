@@ -10,6 +10,7 @@ class DishesAdapter{
     }
     
     createDish(nameValue, restaurant_id){
+       
         const dish = {
             name: nameValue,
             restaurant_id: restaurant_id

@@ -10,7 +10,6 @@ class Restaurants{
 
     initBindingsAndEventListeners(){
         this.restaurantsContainer = document.getElementById('restaurants-container')
-       
         this.newRestaurantName = document.getElementById('new-restaurant-name')
         this.newRestaurantCity = document.getElementById('new-restaurant-city')
         this.newRestaurantState = document.getElementById('new-restaurant-state')

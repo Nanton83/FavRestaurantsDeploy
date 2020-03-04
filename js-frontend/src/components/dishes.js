@@ -17,9 +17,9 @@ class Dishes{
     createDish(event) { 
         event.preventDefault()
         this.optionIndex = document.getElementById("restaurant-list")
-        const dishName = "Test Dish"
+        this.dishName = document.getElementById("new-dish-name")
+        const dishName = this.dishName.value
         const restaurantId = this.optionIndex.options.selectedIndex
-        
         this.adapter.createDish(dishName, restaurantId)
         // .then(dish => {
         //     this.dishes.push(new Dish(dish))

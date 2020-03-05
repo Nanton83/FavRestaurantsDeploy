@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Favorite Restaurants is an application with a rails api backend and a javascript front end.
 
-Things you may want to cover:
+A visitor may add their favorite restaurant and add their favorite dishes to any restaurant in the list.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The repo should be cloned and bundled within the FavRestaurants-api file and then run as a rails server.

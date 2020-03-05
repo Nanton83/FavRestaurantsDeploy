@@ -1,17 +1,21 @@
-.container {
-    width: 960px;
-    margin: auto;
-    margin-top: 50px;
+html { 
+  background: url(waterfront-restaurants.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-#dishDIV {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: lightblue;
-    margin-top: 20px;
-  }
-  
+.container {
+  background-color: whitesmoke;
+  margin: 0 auto;
+  max-width: 700px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  padding: 1em;
+}  
   .hide{
     display:none;  
   }
+
+  

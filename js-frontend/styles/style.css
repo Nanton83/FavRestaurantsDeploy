@@ -14,8 +14,12 @@ html {
   border-radius: 10px;
   padding: 1em;
 }  
-  .hide{
-    display:none;  
-  }
 
+h1 {
+  text-align: center;
+}
+
+.centerform {
+  text-align: center;
+}
   

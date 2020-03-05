@@ -10,29 +10,30 @@
 <body>
     
     <div class="container">
+        <div class="centerform">
+            
+            <h1>Our Favorite Restaurants</h1>
 
-        <h1>Our Favorite Restaurants</h1>
+                <form id="new-restaurant-form">
+                    <input type="text" name="restaurant-name" id="new-restaurant-name" placeholder="Restaurant Name"/>
+                    <input type="text" name="restaurant-city" id="new-restaurant-city" placeholder="Restaurant City"/>
+                    <input type="text" name="restaurant-state" id="new-restaurant-state" placeholder="Restaurant State"/>
+                    <input type="submit" value="Save Restaurant"/>
+                </form><br>
 
-         
-            <form id="new-restaurant-form">
-                <input type="text" name="restaurant-name" id="new-restaurant-name" placeholder="Restaurant Name"/>
-                <input type="text" name="restaurant-city" id="new-restaurant-city" placeholder="Restaurant City"/>
-                <input type="text" name="restaurant-state" id="new-restaurant-state" placeholder="Restaurant State"/>
-                <input type="submit" value="Save Restaurant"/>
-            </form><br>
+                <h1>Add Your Favorite Dish</h1>
 
-            <h1>Add Your Favorite Dish</h1>
-
-        <form id="new-dish-form">
-            <label for="restaurant-list">Choose A Restaurant:</label>
-            <select id="restaurant-list">
-                <option value="" disabled selected hidden>Restaurants</option>
-            </select>
-            <input type="text" name="dish-name" id="new-dish-name" placeholder="Favorite Dish Name"/>
-            <button id="dishBtn"> 
-                Add Dish 
-            </button>
-        </form><br><br>
+                <form id="new-dish-form">
+                    <label for="restaurant-list">Choose A Restaurant:</label>
+                    <select id="restaurant-list">
+                        <option value="" disabled selected hidden>Restaurants</option>
+                    </select>
+                    <input type="text" name="dish-name" id="new-dish-name" placeholder="Favorite Dish Name"/>
+                        <button id="dishBtn"> 
+                        Add Dish 
+                        </button>
+                </form><br><br>
+        </div>
         
 
         <div id="restaurants-container">

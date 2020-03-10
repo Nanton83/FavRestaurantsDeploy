@@ -1,3 +1,8 @@
+const restaurantsContainer = document.getElementById('restaurants-container')
+const newRestaurantState = document.getElementById('new-restaurant-state')
+const newRestaurantCity = document.getElementById('new-restaurant-city')
+const newRestaurantName = document.getElementById('new-restaurant-name')
+
 class Restaurants{
     constructor() {
         this.restaurants = []
@@ -9,10 +14,7 @@ class Restaurants{
     }
 
     initBindingsAndEventListeners(){
-        this.restaurantsContainer = document.getElementById('restaurants-container')
-        this.newRestaurantName = document.getElementById('new-restaurant-name')
-        this.newRestaurantCity = document.getElementById('new-restaurant-city')
-        this.newRestaurantState = document.getElementById('new-restaurant-state')
+        // this.restaurantsContainer = document.getElementById('restaurants-container')
         this.restaurantForm = document.getElementById('new-restaurant-form')
         this.restaurantForm.addEventListener('submit', this.createRestaurant.bind(this)) //hard bind
        
@@ -20,15 +22,21 @@ class Restaurants{
 
     createRestaurant(event){
         event.preventDefault()
-        const nameValue = this.newRestaurantName.value
-        const cityValue = this.newRestaurantCity.value
-        const stateValue = this.newRestaurantState.value
+        const nameValue = newRestaurantName.value
+        const cityValue = newRestaurantCity.value
+        const stateValue = newRestaurantState.value
         
         this.adapter.createRestaurant(nameValue, cityValue, stateValue).then(restaurant => {
-            this.restaurants.push(new Restaurant(restaurant))
-            
-            this.renderRestaurants()
-            
+           
+            let newRestaurant = new Restaurant(restaurant)
+            newRestaurant.dishes = []
+           
+            restaurantsContainer.innerHTML += (newRestaurant.renderRestaurantHtml())
+           
+            newRestaurantState.value = ""
+            newRestaurantCity.value = ""
+            newRestaurantName.value = ""
+    
         })
     }
 
@@ -38,9 +46,6 @@ class Restaurants{
         .then(restaurants => {
             
             restaurants.forEach(restaurant => {
-                
-                
-                
                 this.buildDropDown(restaurant)
             })
         })   
@@ -64,21 +69,21 @@ class Restaurants{
         this.adapter
         .getRestaurants()
         .then(restaurants => {
-            this.renderRestaurants(restaurants)
-           
-        })   
-             
-    }
-        
-    renderRestaurants(restaurantsArray) {
-    
-        restaurantsArray.forEach(restaurant => {
+            // this.renderRestaurants(restaurants)
+           restaurants.forEach(restaurant => {
           let newRestaurant = new Restaurant(restaurant)
-          this.restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
+        //   newRestaurant.renderRestaurantHtml(restaurant)
+          restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
+        })      
         })
     }
-
-      
-
-  
+        
+    // renderRestaurants(restaurantsArray) {
+    // //    renders html for single restaurant
+    //     // restaurantsArray.forEach(restaurant => {
+    //     //   let newRestaurant = new Restaurant(restaurant)
+        
+    //       this.restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
+    //     })
+    // }
 }

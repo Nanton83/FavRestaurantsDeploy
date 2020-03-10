@@ -8,24 +8,19 @@ class Restaurant{
     }
 
 
-
     renderRestaurantHtml() {
+     
         return (
-          `<li>${this.name} - ${this.city}, ${this.state}<br>\
-          
+          `
+          <li>${this.name} - ${this.city}, ${this.state}<br>
+        
             <ul>
               ${this.dishes.map(dish => {
                 return (`<li>${dish.name}</li>`)
                 }).join('')}
             </ul>
-        
-          `
+            `
         )
     }
-
-    
-  
-    
-
 }
 

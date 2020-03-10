@@ -4,9 +4,4 @@ class Dish{
         this.restaurant_id = dishJSON.restaurant_id
     }
 
-   
-
-  
-
-
 }

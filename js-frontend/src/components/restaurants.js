@@ -36,7 +36,8 @@ class Restaurants{
             newRestaurantState.value = ""
             newRestaurantCity.value = ""
             newRestaurantName.value = ""
-    
+            document.getElementById("restaurant-list").innerHTML = ""
+            this.getRestaurantName()
         })
     }
 
@@ -78,12 +79,4 @@ class Restaurants{
         })
     }
         
-    // renderRestaurants(restaurantsArray) {
-    // //    renders html for single restaurant
-    //     // restaurantsArray.forEach(restaurant => {
-    //     //   let newRestaurant = new Restaurant(restaurant)
-        
-    //       this.restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
-    //     })
-    // }
 }

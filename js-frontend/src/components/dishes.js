@@ -15,14 +15,17 @@ class Dishes{
     }
 
     createDish(event) { 
+        
         event.preventDefault()
         this.optionIndex = document.getElementById("restaurant-list")
         this.dishName = document.getElementById("new-dish-name")
         const dishName = this.dishName.value
         const restaurantId = this.optionIndex.options.selectedIndex
         this.adapter.createDish(dishName, restaurantId)
-        // .then(dish => {
-        //     this.dishes.push(new Dish(dish))
+        // const restaurantLi = document.querySelector(`".${restaurantId}"`)
+       
     }
+
+
 
 }

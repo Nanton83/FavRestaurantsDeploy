@@ -12,7 +12,7 @@ class Restaurant{
      
         return (
           `
-          <li>${this.name} - ${this.city}, ${this.state}<br>
+          <li class=${this.id}>${this.name} - ${this.city}, ${this.state}<br>
         
             <ul>
               ${this.dishes.map(dish => {

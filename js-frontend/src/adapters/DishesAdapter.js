@@ -22,6 +22,7 @@ class DishesAdapter{
             },
             body: JSON.stringify({dish}),
         }).then(results => results.json())
+        
     }
-
+    
 }

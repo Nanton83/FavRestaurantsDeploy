@@ -1,9 +1,10 @@
-class Dishes{
+
+
+class Dishes {
     constructor() {
         this.dishes = []
         this.adapter = new DishesAdapter()
         this.initBindingsAndEventListeners()
-        
     }
 
     initBindingsAndEventListeners(){
@@ -21,9 +22,13 @@ class Dishes{
         this.dishName = document.getElementById("new-dish-name")
         const dishName = this.dishName.value
         const restaurantId = this.optionIndex.options.selectedIndex
-        this.adapter.createDish(dishName, restaurantId)
-        // const restaurantLi = document.querySelector(`".${restaurantId}"`)
        
+        this.adapter.createDish(dishName, restaurantId)
+
+        let select = document.getElementById(`${restaurantId}`)
+        let dsh = document.createElement("li")
+        dsh.textContent = dishName
+        select.appendChild(dsh)
     }
 
 

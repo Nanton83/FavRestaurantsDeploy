@@ -17,7 +17,6 @@ class Restaurants{
         // this.restaurantsContainer = document.getElementById('restaurants-container')
         this.restaurantForm = document.getElementById('new-restaurant-form')
         this.restaurantForm.addEventListener('submit', this.createRestaurant.bind(this)) //hard bind
-       
     }
 
     createRestaurant(event){

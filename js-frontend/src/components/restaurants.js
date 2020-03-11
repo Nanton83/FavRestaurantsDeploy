@@ -37,6 +37,7 @@ class Restaurants{
             newRestaurantName.value = ""
             document.getElementById("restaurant-list").innerHTML = ""
             this.getRestaurantName()
+    
         })
     }
 
@@ -63,6 +64,7 @@ class Restaurants{
             
             select.appendChild(el);
         }
+        
     }
 
     fetchAndLoadRestaurants(){

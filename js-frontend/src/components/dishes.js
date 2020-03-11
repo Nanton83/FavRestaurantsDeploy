@@ -1,5 +1,6 @@
 
 
+
 class Dishes {
     constructor() {
         this.dishes = []
@@ -9,26 +10,33 @@ class Dishes {
 
     initBindingsAndEventListeners(){
         this.dishForm = document.getElementById('new-dish-form')
-        this.newDishName = document.getElementById('new-dish-name')
+        // this.newDishName = document.getElementById('new-dish-name')
         this.restaurantId = document.getElementById('new-dish-restaurant-id')
         this.restaurantBtn = document.getElementById("dishBtn")
         this.restaurantBtn.addEventListener("click", this.createDish.bind(this))
     }
 
     createDish(event) { 
-        
         event.preventDefault()
-        this.optionIndex = document.getElementById("restaurant-list")
-        this.dishName = document.getElementById("new-dish-name")
-        const dishName = this.dishName.value
-        const restaurantId = this.optionIndex.options.selectedIndex
+
+        let dishName = document.getElementById("new-dish-name")
+        let optionIndex = document.getElementById("restaurant-list")
+        
+        
+        let dName = dishName.value
+        let restaurantId = optionIndex.options.selectedIndex
        
-        this.adapter.createDish(dishName, restaurantId)
+        this.adapter.createDish(dName, restaurantId)
 
         let select = document.getElementById(`${restaurantId}`)
         let dsh = document.createElement("li")
-        dsh.textContent = dishName
+        dsh.textContent = dName
         select.appendChild(dsh)
+        
+        dishName.value = ""
+        optionIndex.options.selectedIndex = 0
+        
+        
     }
 
 

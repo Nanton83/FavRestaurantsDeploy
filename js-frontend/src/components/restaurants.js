@@ -35,9 +35,10 @@ class Restaurants{
             newRestaurantState.value = ""
             newRestaurantCity.value = ""
             newRestaurantName.value = ""
-            document.getElementById("restaurant-list").innerHTML = ""
+            
+            document.getElementById("restaurant-list").innerHTML = `"<option value="" disabled selected hidden>Restaurants</option>"`
             this.getRestaurantName()
-    
+            
         })
     }
 
@@ -57,12 +58,15 @@ class Restaurants{
         let options = []
         options.push(restaurant)
         for(let i = 0; i < options.length; i++) {
+            
             let opt = options[i];
             let el = document.createElement("option");
             el.textContent = opt.name;
             el.value = opt.id;
             
             select.appendChild(el);
+            
+           
         }
         
     }

@@ -27,14 +27,14 @@ class Dishes {
         let restaurantId = optionIndex.options.selectedIndex
        
         this.adapter.createDish(dName, restaurantId)
-
+        
         let select = document.getElementById(`${restaurantId}`)
         let dsh = document.createElement("li")
         dsh.textContent = dName
         select.appendChild(dsh)
         
-        dishName.value = ""
-        optionIndex.options.selectedIndex = 0
+        // dishName.value = ""
+        // optionIndex.options.selectedIndex = 0
         
         
     }

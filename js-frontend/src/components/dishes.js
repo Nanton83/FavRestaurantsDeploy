@@ -32,7 +32,7 @@ class Dishes {
         let dsh = document.createElement("li")
         dsh.textContent = dName
         select.appendChild(dsh)
-        
+        dishName.value = ""
         // dishName.value = ""
         // optionIndex.options.selectedIndex = 0
         

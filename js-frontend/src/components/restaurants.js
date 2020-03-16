@@ -17,8 +17,35 @@ class Restaurants{
         // this.restaurantsContainer = document.getElementById('restaurants-container')
         this.restaurantForm = document.getElementById('new-restaurant-form')
         this.restaurantForm.addEventListener('submit', this.createRestaurant.bind(this)) //hard bind
+        this.sortBtn = document.getElementById("sort")
+        this.sortBtn.addEventListener("click", this.sortRestaurants.bind(this))
+    }
+        
+    sortRestaurants(){
+        this.adapter.getRestaurants()
+        .then(restaurants => {
+            restaurants.sort((a, b)=> {
+                let nameA = a.name.toUpperCase()
+                let nameB = b.name.toUpperCase()
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0
+            })
+            restaurantsContainer.innerHTML = ""
+            restaurants.forEach(restaurant => {
+                let newRestaurant = new Restaurant(restaurant)
+              //   newRestaurant.renderRestaurantHtml(restaurant)
+              
+                restaurantsContainer.innerHTML += newRestaurant.renderRestaurantHtml()
+              })
+        })
     }
 
+ 
     createRestaurant(event){
         event.preventDefault()
         const nameValue = newRestaurantName.value

@@ -1,8 +1,8 @@
 class App {
-    constructor(){
-        
+    constructor() {
+
         this.restaurants = new Restaurants()
         this.dishes = new Dishes()
-        
+
     }
 }
